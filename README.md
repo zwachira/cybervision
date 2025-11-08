@@ -61,3 +61,36 @@ The app provides a centralized dashboard for researchers, analysts, and security
 
 ## 🏗️ Architecture
 
++------------------------------+
+| Threat Feed APIs |
+| (Shodan, OTX, VirusTotal) |
++--------------+---------------+
+|
+v
++------------------------------+
+| Data Collector (Celery) |
+| Schedules ingestion jobs |
++--------------+---------------+
+|
+v
++------------------------------+
+| FastAPI Backend |
+| - Normalization |
+| - REST API Endpoints |
+| - AI/NLP Analyzer |
++--------------+---------------+
+|
+v
++------------------------------+
+| MongoDB / Elasticsearch |
+| - Threat indicators |
+| - Summaries & stats |
++--------------+---------------+
+|
+v
++------------------------------+
+| React Dashboard |
+| - Global heatmap |
+| - Charts & insights |
+| - Authenticated users |
++------------------------------+
